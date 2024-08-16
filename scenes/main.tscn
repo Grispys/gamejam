@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtbwn7c7hgbsg"]
+
+[ext_resource type="PackedScene" uid="uid://dh6l5h8jc6lmn" path="res://scenes/player.tscn" id="1_fvq2a"]
+[ext_resource type="Texture2D" uid="uid://xv6048an6pl8" path="res://materials/Wood092_1K-JPG_Color.jpg" id="2_didos"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g8ef3"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_dmyvc"]
+sky_material = SubResource("ProceduralSkyMaterial_g8ef3")
+
+[sub_resource type="Environment" id="Environment_qkckg"]
+background_mode = 2
+sky = SubResource("Sky_dmyvc")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq472"]
+albedo_texture = ExtResource("2_didos")
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+uv1_scale = Vector3(10, 10, 10)
+texture_filter = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_phpd5"]
+material = SubResource("StandardMaterial3D_rq472")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_usswi"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="main" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_fvq2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20888, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201928, 2.3141, 9.09197)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qkckg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.995725, 0.0923706, 4.03765e-09, 0, -4.37114e-08, 1, 0.0923706, 0.995725, 4.35245e-08, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(618.375, 0, 0, 0, 0.297864, 0, 0, 0, 586.648, -5.29593, -0.109131, -3.60578)
+mesh = SubResource("BoxMesh_phpd5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 2.95002, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_usswi")

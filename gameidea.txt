@@ -1,0 +1,4 @@
+game where you play as a fruit fly, in the house of some random family. built to scale,
+you are super tiny compared to the regular sized rooms. you have to find fruit, garbage, syrups,
+stains, decaying aphids, etc. avoid humans, other insects/predators, traps, and manage stamina. you cannot fly forever
+and have to regularly land to regain stamina.
