@@ -188,6 +188,7 @@ mesh = SubResource("PlaneMesh_6xvld")
 shape = SubResource("ConvexPolygonShape3D_bgt8v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_vg1rs")
