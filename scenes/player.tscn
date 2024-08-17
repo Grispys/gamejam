@@ -17,3 +17,12 @@ mesh = SubResource("CapsuleMesh_0kh3k")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.209121, 0)
 shape = SubResource("ConvexPolygonShape3D_qetl0")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13692, 0.11805)
+spring_length = 10.0
+margin = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035326, 0.140046, 4.63432)
+fov = 90.0

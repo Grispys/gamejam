@@ -2,3 +2,19 @@ game where you play as a fruit fly, in the house of some random family. built to
 you are super tiny compared to the regular sized rooms. you have to find fruit, garbage, syrups,
 stains, decaying aphids, etc. avoid humans, other insects/predators, traps, and manage stamina. you cannot fly forever
 and have to regularly land to regain stamina.
+
+wasd to move on the floor.
+hold space to begin flying. stamina slowly depletes while flying.
+two variables are needed to finish a level
+
+is_fruit_full = true
+is_detected = false
+
+the player must be full of fruit, and not be detected by a human for the stage to end.
+
+if is_fruit_full = true and if is_detected = false:
+	end game
+
+land on fruit and hold button to consume. don't get smacked or smashed by humans. watch out for traps, don't get too close
+to light sources, don't touch water, and you have a timer before you die (each stage takes days after running out of food, and
+you are about to starve.)
