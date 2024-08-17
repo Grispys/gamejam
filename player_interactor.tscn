@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqhawq6a4xg0q"]
+
+[ext_resource type="Script" path="res://interaction/PlayerInteractor.gd" id="1_052aa"]
+
+[node name="PlayerInteractor"]
+script = ExtResource("1_052aa")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -8,7 +8,7 @@ var rotation_speed  = 0.00004
 var is_fruit_full = false
 var is_detected = false
 
-var is_flying = false
+var is_flying = true
 
 
 # Variables to handle rotation
@@ -58,7 +58,7 @@ func _process(_delta):
 	rotation_y -= mouse_movement.x * rotation_speed
     
     # prevent camera from circling player vertically
-	rotation_x = clamp(rotation_x, deg_to_rad(-89), deg_to_rad(89))
+	rotation_x = clamp(rotation_x, deg_to_rad(-69), deg_to_rad(69))
     
     # apply rotation to the character
 	rotation_degrees.x = rad_to_deg(rotation_x)

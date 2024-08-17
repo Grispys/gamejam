@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cw7ov7t5q7blx"
+path="res://.godot/imported/Floor Baseboard Bridgemode (Meshed)003.obj-47ab1b7d2b52ead850ac7de324e2f721.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Floor Baseboard Bridgemode (Meshed)003.obj-47ab1b7d2b52ead850ac7de324e2f721.mesh"]
+
+source_file="res://models/Floor Baseboard Bridgemode (Meshed)003.obj"
+dest_files=["res://.godot/imported/Floor Baseboard Bridgemode (Meshed)003.obj-47ab1b7d2b52ead850ac7de324e2f721.mesh", "res://.godot/imported/Floor Baseboard Bridgemode (Meshed)003.obj-47ab1b7d2b52ead850ac7de324e2f721.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
