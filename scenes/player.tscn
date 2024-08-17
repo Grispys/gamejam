@@ -19,9 +19,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.209121, 0)
 shape = SubResource("ConvexPolygonShape3D_qetl0")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13692, 0.11805)
-spring_length = 10.0
-margin = 2.0
+transform = Transform3D(1, 0, 0, 0, 0.839022, 0.544097, 0, -0.544097, 0.839022, 0, 0.784938, 0.31122)
+spring_length = 14.0
+margin = 0.04
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035326, 0.140046, 4.63432)
