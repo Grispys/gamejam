@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b74o42i06h0ap"]
+[gd_scene load_steps=3 format=3 uid="uid://b74o42i06h0ap"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_qf5n7"]
+[ext_resource type="Texture2D" uid="uid://ctehwpkw8l484" path="res://titleimage.png" id="2_ebwba"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,9 +15,9 @@ script = ExtResource("1_qf5n7")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = 850.0
-offset_top = 400.0
+offset_top = 500.0
 offset_right = 1050.0
-offset_bottom = 708.0
+offset_bottom = 808.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -37,6 +38,11 @@ custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 text = "Exit
 "
+
+[node name="Titleimage" type="Sprite2D" parent="."]
+position = Vector2(951, 270)
+scale = Vector2(0.785, 0.633)
+texture = ExtResource("2_ebwba")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

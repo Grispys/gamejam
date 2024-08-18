@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxnhsqtg3bnab"]
+
+[ext_resource type="PackedScene" uid="uid://cs4je4pjhn04q" path="res://donut.glb" id="1_2i7un"]
+[ext_resource type="Script" path="res://scenes/donut.gd" id="1_jkolo"]
+[ext_resource type="PackedScene" uid="uid://ybjew0xfcnru" path="res://interaction/interactable.tscn" id="3_xd7ac"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vsxuj"]
+
+[node name="donute" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00886881, 0.07823, 0)
+script = ExtResource("1_jkolo")
+
+[node name="donut" parent="." instance=ExtResource("1_2i7un")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -6.31921, -7.74805, -5.16325)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442883, 1.33711, 6.02773)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(5.3, 0, 0, 0, 2.04, 0, 0, 0, 5.3, -0.280979, 0.0610429, -6.09312)
+shape = SubResource("SphereShape3D_vsxuj")
+
+[node name="Interactable" parent="." instance=ExtResource("3_xd7ac")]
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(6.3, 0, 0, 0, 2.425, 0, 0, 0, 6.3, -0.771275, 1.43607, 0)
+shape = SubResource("SphereShape3D_vsxuj")
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+
+[editable path="Interactable"]
